@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cousins Collective — Premium virtual operations for attorneys, founders, and consultants. Retainer-based executive support. Your key to more.">
+<meta property="og:title" content="Cousins Collective — Your Key to More">
+<meta property="og:description" content="Premium virtual operations for high-performing professionals. Unlock your time.">
+<meta property="og:url" content="https://cousinscollective.net">
+<title>Cousins Collective — Your Key to More</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ny:#0D1B2A; --ny2:#152130;
+  --go:#C09B4C; --golt:#D4B87A; --godk:#8C6E2E;
+  --cr:#F8F3EB; --bi:#EAE0CE; --fo:#C2B6A0; --du:#7A6E5E;
+  --bl:#14100A; --wh:#FFFFFF;
+  --ser:'Cormorant Garamond',Georgia,serif;
+  --san:'DM Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--san);background:var(--cr);color:var(--bl);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(13,27,42,.97);backdrop-filter:blur(10px);
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;border-bottom:2px solid var(--go);
+  transition:all .3s;
+}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-cc{display:flex;align-items:center;user-select:none}
+.nav-c1{font-family:var(--ser);font-size:30px;font-weight:300;color:var(--cr);line-height:1}
+.nav-c2{font-family:var(--ser);font-size:30px;font-weight:300;color:var(--go);
+  line-height:1;transform:scaleX(-1);display:inline-block;margin-left:-5px}
+.nav-wordmark{display:flex;flex-direction:column}
+.nav-name{font-family:var(--ser);font-size:13px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cr);line-height:1}
+.nav-tag{font-family:var(--ser);font-size:10px;font-style:italic;
+  color:var(--go);margin-top:2px}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--fo);text-decoration:none;transition:color .2s;font-weight:400}
+.nav-links a:hover{color:var(--golt)}
+.nav-cta{padding:10px 24px;background:var(--go);color:var(--ny);
+  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;transition:opacity .2s;white-space:nowrap}
+.nav-cta:hover{opacity:.88}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;
+  flex-direction:column;gap:5px;padding:4px}
+.nav-mobile-btn span{width:22px;height:1.5px;background:var(--fo);display:block;
+  transition:all .3s}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;background:var(--ny);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:120px 80px 80px;position:relative;overflow:hidden;
+}
+.hero-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 70% 35%,rgba(192,155,76,.07),transparent);
+  pointer-events:none}
+.hero-grid{position:absolute;inset:0;opacity:.025;
+  background-image:linear-gradient(rgba(192,155,76,1) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(192,155,76,1) 1px,transparent 1px);
+  background-size:80px 80px}
+.hero-bg-mark{position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  opacity:.04;user-select:none;pointer-events:none;
+  font-family:var(--ser);font-size:42vw;font-weight:300;color:var(--wh);
+  line-height:1;letter-spacing:-.05em}
+.hero-eyebrow{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--go);display:flex;align-items:center;gap:14px;margin-bottom:24px;
+  position:relative;z-index:2}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--go)}
+.hero-h1{font-family:var(--ser);font-size:clamp(52px,8vw,110px);
+  font-weight:300;line-height:.95;letter-spacing:-.025em;color:var(--wh);
+  margin-bottom:28px;position:relative;z-index:2}
+.hero-h1 em{font-style:italic;color:var(--golt)}
+.hero-sub{font-size:17px;font-weight:300;color:var(--fo);max-width:500px;
+  line-height:1.7;margin-bottom:44px;position:relative;z-index:2}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+.btn-gold{padding:16px 40px;background:var(--go);color:var(--ny);
+  font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;transition:opacity .2s;border:none;cursor:pointer}
+.btn-gold:hover{opacity:.88}
+.btn-ghost{padding:16px 32px;background:transparent;color:var(--fo);
+  font-size:13px;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;
+  border:1px solid rgba(255,255,255,.15);transition:border-color .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.35);color:var(--cr)}
+.hero-proof{position:relative;z-index:2;display:flex;align-items:center;
+  gap:24px;margin-top:56px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap}
+.proof-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--du)}
+.proof-items{display:flex;gap:20px;flex-wrap:wrap}
+.proof-item{font-size:13px;color:rgba(248,243,235,.4);font-style:italic}
+
+/* ── SECTIONS ── */
+.section{padding:100px 80px}
+.section.dark{background:var(--ny)}
+.section.alt{background:var(--bi)}
+.section.cream{background:var(--cr)}
+.sec-inner{max-width:1080px;margin:0 auto}
+.sec-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--godk);font-weight:500;margin-bottom:12px;
+  display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:24px;height:1px;background:var(--go)}
+.dark .sec-label{color:var(--golt)}
+.dark .sec-label::before{background:var(--go)}
+.sec-h{font-family:var(--ser);font-size:clamp(34px,4.5vw,60px);
+  font-weight:300;line-height:1.05;color:var(--ny);letter-spacing:-.015em;margin-bottom:16px}
+.dark .sec-h{color:var(--wh)}
+.sec-sub{font-size:16px;font-weight:300;color:var(--du);
+  max-width:520px;line-height:1.7;margin-bottom:56px}
+.dark .sec-sub{color:var(--fo)}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(13,27,42,.08);border:1px solid rgba(13,27,42,.08)}
+.svc-card{background:var(--wh);padding:36px 28px;transition:background .2s}
+.svc-card:hover{background:var(--cr)}
+.svc-icon{font-size:26px;margin-bottom:16px}
+.svc-name{font-family:var(--ser);font-size:20px;font-weight:400;
+  color:var(--ny);margin-bottom:8px}
+.svc-desc{font-size:13.5px;color:var(--du);line-height:1.7}
+.svc-note{margin-top:16px;font-size:11.5px;color:var(--godk);
+  letter-spacing:.06em;font-weight:500}
+
+/* ── PROCESS ── */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(13,27,42,.08)}
+.process-step{background:var(--cr);padding:36px 26px}
+.ps-num{font-family:var(--ser);font-size:52px;font-weight:300;
+  color:var(--bi);line-height:1;margin-bottom:16px}
+.ps-title{font-size:14px;font-weight:600;color:var(--ny);margin-bottom:8px;
+  letter-spacing:.02em}
+.ps-body{font-size:13.5px;color:var(--du);line-height:1.68}
+
+/* ── PRICING ── */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.tier{padding:40px 32px;background:rgba(255,255,255,.04)}
+.tier.featured{background:var(--go)}
+.tier-badge{font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--go);font-weight:500;margin-bottom:14px}
+.tier.featured .tier-badge{color:rgba(13,27,42,.5)}
+.tier-price{font-family:var(--ser);font-size:36px;font-weight:300;
+  color:var(--wh);margin-bottom:4px}
+.tier.featured .tier-price{color:var(--ny)}
+.tier-period{font-size:13px;color:var(--fo);margin-bottom:8px}
+.tier.featured .tier-period{color:rgba(13,27,42,.55)}
+.tier-desc{font-size:13px;color:var(--fo);line-height:1.6;margin-bottom:24px;
+  padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.tier.featured .tier-desc{color:rgba(13,27,42,.6);border-color:rgba(13,27,42,.12)}
+.tier-list{list-style:none;padding:0;margin-bottom:28px}
+.tier-list li{font-size:13px;color:var(--fo);padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  display:flex;gap:10px;align-items:flex-start;line-height:1.4}
+.tier.featured .tier-list li{color:rgba(13,27,42,.65);border-color:rgba(13,27,42,.08)}
+.tier-list li::before{content:'✦';color:var(--go);font-size:9px;
+  flex-shrink:0;margin-top:3px}
+.tier.featured .tier-list li::before{color:var(--ny)}
+.tier-btn{display:block;text-align:center;padding:13px;font-size:12px;
+  font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;transition:opacity .2s;font-family:var(--san)}
+.tier-btn:hover{opacity:.88}
+.tier-btn.on-dark{background:var(--go);color:var(--ny)}
+.tier-btn.on-gold{background:var(--ny);color:var(--wh)}
+
+/* ── TESTIMONIAL ── */
+.testi{padding:56px 60px;border-left:4px solid var(--go);
+  background:rgba(192,155,76,.05);max-width:780px}
+.testi blockquote{font-family:var(--ser);font-size:clamp(20px,2.5vw,30px);
+  font-weight:300;font-style:italic;color:var(--ny);line-height:1.4;margin-bottom:18px}
+.testi-author{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--godk)}
+.testi-stars{color:var(--go);font-size:13px;margin-bottom:16px;letter-spacing:2px}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-founders{display:flex;flex-direction:column;gap:20px}
+.founder-card{padding:28px 32px;background:rgba(255,255,255,.04);
+  border-left:3px solid var(--go)}
+.founder-name{font-family:var(--ser);font-size:22px;font-weight:400;
+  color:var(--wh);margin-bottom:2px}
+.founder-role{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--go);margin-bottom:14px}
+.founder-contact{display:flex;flex-direction:column;gap:4px}
+.founder-contact a{font-size:13px;color:var(--fo);text-decoration:none;
+  transition:color .2s}
+.founder-contact a:hover{color:var(--golt)}
+.about-story p{font-size:15px;color:var(--fo);line-height:1.8;margin-bottom:18px}
+
+/* ── CTA BAND ── */
+.cta-band{background:var(--go);padding:80px;text-align:center}
+.cta-band h2{font-family:var(--ser);font-size:clamp(32px,4vw,56px);
+  font-weight:300;color:var(--ny);margin-bottom:16px;line-height:1.05}
+.cta-band p{font-size:16px;color:rgba(13,27,42,.6);max-width:480px;
+  margin:0 auto 36px;line-height:1.65}
+.btn-navy{padding:16px 40px;background:var(--ny);color:var(--wh);
+  font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;transition:opacity .2s}
+.btn-navy:hover{opacity:.88}
+
+/* ── FOOTER ── */
+footer{background:var(--bl);padding:64px 80px 40px;
+  border-top:2px solid var(--go)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:40px;margin-bottom:52px}
+.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.footer-tagline{font-family:var(--ser);font-size:13px;font-style:italic;
+  color:var(--go);margin-bottom:16px}
+.footer-text{font-size:13px;color:var(--du);line-height:1.9}
+.footer-text a{color:var(--du);text-decoration:none;transition:color .2s}
+.footer-text a:hover{color:var(--go)}
+.footer-col-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--go);font-weight:500;margin-bottom:16px}
+.footer-links{list-style:none;padding:0}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:13px;color:var(--du);text-decoration:none;
+  transition:color .2s;line-height:1.5}
+.footer-links a:hover{color:var(--go)}
+.footer-bottom{padding-top:24px;border-top:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-legal{font-size:11.5px;color:rgba(194,182,160,.4);line-height:1.6}
+
+/* ── SCROLL FADE IN ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .nav-mobile-btn{display:flex}
+  #hero{padding:100px 28px 64px}
+  .hero-bg-mark{display:none}
+  .section{padding:72px 28px}
+  footer{padding:52px 28px 32px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .svc-grid,.tier-grid,.process-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .cta-band{padding:64px 28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <div class="nav-cc"><span class="nav-c1">C</span><span class="nav-c2">C</span></div>
+    <div class="nav-wordmark">
+      <span class="nav-name">Cousins Collective</span>
+      <span class="nav-tag">Your key to more.</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="booking.html" class="nav-cta">Book a Consultation</a>
+  </div>
+  <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;
+  background:var(--ny);z-index:99;padding:24px;border-bottom:1px solid rgba(192,155,76,.2)">
+  <div style="display:flex;flex-direction:column;gap:0">
+    <a href="#services" onclick="toggleMenu()" style="padding:14px 0;color:var(--fo);text-decoration:none;
+      font-size:13px;letter-spacing:.06em;border-bottom:1px solid rgba(255,255,255,.06)">Services</a>
+    <a href="#how-it-works" onclick="toggleMenu()" style="padding:14px 0;color:var(--fo);text-decoration:none;
+      font-size:13px;letter-spacing:.06em;border-bottom:1px solid rgba(255,255,255,.06)">How It Works</a>
+    <a href="#pricing" onclick="toggleMenu()" style="padding:14px 0;color:var(--fo);text-decoration:none;
+      font-size:13px;letter-spacing:.06em;border-bottom:1px solid rgba(255,255,255,.06)">Pricing</a>
+    <a href="#about" onclick="toggleMenu()" style="padding:14px 0;color:var(--fo);text-decoration:none;
+      font-size:13px;letter-spacing:.06em;border-bottom:1px solid rgba(255,255,255,.06)">About</a>
+    <a href="booking.html" style="margin-top:16px;padding:14px 24px;background:var(--go);
+      color:var(--ny);text-decoration:none;font-size:13px;font-weight:600;
+      letter-spacing:.06em;text-align:center">Book a Consultation</a>
+  </div>
+</div>
+
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-bg-mark">C</div>
+
+  <div style="position:relative;z-index:2">
+    <div class="hero-eyebrow">Premium Virtual Operations · Texas</div>
+    <h1 class="hero-h1">Your time,<br><em>unlocked.</em></h1>
+    <p class="hero-sub">Cousins Collective is a boutique virtual operations firm for attorneys, founders, and consultants who've outgrown the idea that "virtual assistant" means cheap, hourly, or unpredictable.</p>
+    <div class="hero-ctas">
+      <a href="booking.html" class="btn-gold">Book your business solutions consultation</a>
+      <a href="#how-it-works" class="btn-ghost">See how it works</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-label">Trusted by</div>
+      <div class="proof-items">
+        <span class="proof-item">Solo attorneys</span>
+        <span class="proof-item">Healthcare consultants</span>
+        <span class="proof-item">SaaS founders</span>
+        <span class="proof-item">Executive coaches</span>
+        <span class="proof-item">Real estate professionals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── SERVICES ─── -->
+<section id="services" class="section cream">
+  <div class="sec-inner">
+    <div class="sec-label fade-in">What We Unlock</div>
+    <h2 class="sec-h fade-in">The operations your<br>ambition has been waiting for.</h2>
+    <p class="sec-sub fade-in">We handle the work that's locking you out of your best week. Three service pillars. One indispensable partner.</p>
+    <div class="svc-grid fade-in">
+      <div class="svc-card">
+        <div class="svc-icon">📥</div>
+        <div class="svc-name">Executive Operations</div>
+        <div class="svc-desc">Inbox management, calendar mastery, meeting prep and follow-up, and the daily operational rhythm that keeps your business moving without your constant attention.</div>
+        <div class="svc-note">↳ Available in all retainer tiers</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔁</div>
+        <div class="svc-name">Client & CRM Systems</div>
+        <div class="svc-desc">Onboarding, proposals, contracts, CRM data management, and client communications, handled with the professionalism and discretion your clients expect from you.</div>
+        <div class="svc-note">↳ Momentum & Partner tiers</div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">⚡</div>
+        <div class="svc-name">Projects & Coordination</div>
+        <div class="svc-desc">Research, reporting, vendor coordination, project tracking, and the systems that turn your ideas and intentions into executed outcomes without chasing anyone.</div>
+        <div class="svc-note">↳ Partner tier</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── PULL QUOTE ─── -->
+<div style="background:var(--ny);padding:72px 80px">
+  <div style="max-width:780px;margin:0 auto;border-left:3px solid var(--go);padding-left:40px">
+    <div style="font-family:var(--ser);font-size:clamp(20px,3vw,34px);font-weight:300;
+      font-style:italic;color:var(--wh);line-height:1.35;margin-bottom:18px">
+      "Your clients are not paying you to manage your inbox. Every hour you spend on operations is an hour they didn't get the best version of you."
+    </div>
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--go)">
+      Cousins Collective · Jessie Forbes & Lauren Bazan
+    </div>
+  </div>
+</div>
+
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how-it-works" class="section alt">
+  <div class="sec-inner">
+    <div class="sec-label fade-in">How It Works</div>
+    <h2 class="sec-h fade-in">From application to<br>operations in 7 days.</h2>
+    <p class="sec-sub fade-in">We make the process of getting support as seamless as the support itself. Four steps. Zero friction.</p>
+    <div class="process-grid fade-in">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Complete the Questionnaire</div>
+        <div class="ps-body">An 8-minute intake that helps Jessie and Lauren understand you before your business solutions consultation so every minute of your call is spent solving, not explaining.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <div class="ps-title">Your Discovery Call</div>
+        <div class="ps-body">A focused 20-minute consultation with Jessie or Lauren directly. We confirm the right scope and the specific outcomes you're hiring for. Zero pressure.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Custom Proposal</div>
+        <div class="ps-body">Within 48 hours of your call you receive a tailored proposal with service scope, pricing, and start date. Clear, simple, no surprises.</div>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <div class="ps-title">We Go to Work</div>
+        <div class="ps-body">Onboarding begins. Within one week you're operating at a different level and you'll feel the difference by the end of the first day.</div>
+      </div>
+    </div>
+    <div style="margin-top:36px;text-align:center">
+      <a href="booking.html" class="btn-gold">Reserve my consultation</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TESTIMONIAL ─── -->
+<section class="section cream">
+  <div class="sec-inner">
+    <div class="testi fade-in">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I went from spending 15 hours a week on operational chaos to spending 15 hours a week on the work that actually grows my practice. Cousins Collective is the key I didn't know I was missing."</blockquote>
+      <div class="testi-author">Marcus T. · Solo Attorney · Dallas, TX</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── PRICING ─── -->
+<section id="pricing" class="section dark">
+  <div class="sec-inner">
+    <div class="sec-label fade-in">Investment</div>
+    <h2 class="sec-h fade-in">Retainer plans built<br>for the long game.</h2>
+    <p class="sec-sub fade-in">No hourly billing. No scope surprises. One monthly investment, one indispensable partner who shows up every single day.</p>
+    <div class="tier-grid fade-in">
+      <div class="tier">
+        <div class="tier-badge">Launch</div>
+        <div class="tier-price">$1,200</div>
+        <div class="tier-period">per month · Up to 15 hours</div>
+        <div class="tier-desc">One focused area of support. Perfect for your first dedicated operations hire.</div>
+        <ul class="tier-list">
+          <li>Calendar & scheduling management</li>
+          <li>Email inbox management</li>
+          <li>Meeting prep & follow-up</li>
+          <li>Weekly summary reports</li>
+        </ul>
+        <a href="booking.html" class="tier-btn on-dark">Reserve my consultation</a>
+      </div>
+      <div class="tier featured">
+        <div class="tier-badge">Momentum · Most Popular</div>
+        <div class="tier-price" style="color:var(--ny)">$2,200</div>
+        <div class="tier-period" style="color:rgba(13,27,42,.55)">per month · Up to 30 hours</div>
+        <div class="tier-desc">Full executive support across two to three service areas. The most common starting point.</div>
+        <ul class="tier-list">
+          <li>Everything in Launch</li>
+          <li>CRM & client management</li>
+          <li>Proposal & contract coordination</li>
+          <li>Document organization</li>
+          <li>Client onboarding & intake</li>
+        </ul>
+        <a href="booking.html" class="tier-btn on-gold">Reserve my consultation</a>
+      </div>
+      <div class="tier">
+        <div class="tier-badge">Partner</div>
+        <div class="tier-price">$3,800</div>
+        <div class="tier-period">per month · Up to 55 hours</div>
+        <div class="tier-desc">Complete operations suite for the professional who is ready to fully step out of the day-to-day.</div>
+        <ul class="tier-list">
+          <li>Everything in Momentum</li>
+          <li>Project tracking & coordination</li>
+          <li>Research & reporting</li>
+          <li>Travel & logistics coordination</li>
+          <li>Social media scheduling</li>
+          <li>Invoice & payment follow-up</li>
+        </ul>
+        <a href="booking.html" class="tier-btn on-dark">Reserve my consultation</a>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--du);text-align:center;margin-top:20px;font-style:italic">
+      All retainers are month-to-month with 30-day notice. Custom scopes available.
+    </p>
+  </div>
+</section>
+
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="section dark">
+  <div class="sec-inner">
+    <div class="sec-label fade-in">About Us</div>
+    <div class="about-grid fade-in">
+      <div class="about-story">
+        <h2 class="sec-h" style="margin-bottom:24px">Built on the trust<br>that only family <em style="font-style:italic">carries.</em></h2>
+        <p style="font-size:15px;color:var(--fo);line-height:1.8;margin-bottom:18px">Cousins Collective was founded by Jessie Forbes and Lauren Bazan, cousins who share more than a last name. They share a standard: that the professionals who build things worth building deserve support that actually rises to meet them.</p>
+        <p style="font-size:15px;color:var(--fo);line-height:1.8;margin-bottom:18px">We built Cousins Collective because we watched brilliant attorneys, consultants, and founders spend their most valuable hours on work that was never supposed to be theirs. The operations. The follow-up. The inbox. The calendar. The things that, if handled well, unlock everything.</p>
+        <p style="font-size:15px;color:var(--fo);line-height:1.8">We are Texas-based, US-only, retainer-driven, and deeply invested in the long game of every client we take on. We don't complete tasks. We become indispensable.</p>
+      </div>
+      <div class="about-founders">
+        <div class="founder-card">
+          <div class="founder-name">Jessie Forbes</div>
+          <div class="founder-role">Co-Founder</div>
+          <div class="founder-contact">
+            <a href="tel:5093060120">📱 509-306-0120</a>
+            <a href="mailto:hello@cousinscollective.net">✉️ hello@cousinscollective.net</a>
+          </div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-name">Lauren Bazan</div>
+          <div class="founder-role">Co-Founder</div>
+          <div class="founder-contact">
+            <a href="tel:7024236995">📱 702-423-6995</a>
+            <a href="mailto:hello@cousinscollective.net">✉️ hello@cousinscollective.net</a>
+          </div>
+        </div>
+        <div style="padding:24px;background:rgba(192,155,76,.08);border:1px solid rgba(192,155,76,.2)">
+          <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--go);margin-bottom:10px">We Serve</div>
+          <div style="font-size:13.5px;color:var(--fo);line-height:1.9">
+            Attorneys & Law Firms<br>Healthcare & Private Practice<br>
+            SaaS Founders & Tech Teams<br>Executive Coaches & Educators<br>
+            Real Estate Professionals
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CTA BAND ─── -->
+<div class="cta-band">
+  <h2>Ready to unlock<br>what's next?</h2>
+  <p>Complete our 8-minute intake questionnaire and reserve your Business Solutions Consultation with Jessie or Lauren.</p>
+  <a href="booking.html" class="btn-navy">Reserve my consultation →</a>
+</div>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center">
+          <span style="font-family:var(--ser);font-size:28px;font-weight:300;color:var(--cr);line-height:1">C</span>
+          <span style="font-family:var(--ser);font-size:28px;font-weight:300;color:var(--go);line-height:1;transform:scaleX(-1);display:inline-block;margin-left:-5px">C</span>
+        </div>
+        <span style="font-family:var(--ser);font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--cr)">Cousins Collective</span>
+      </div>
+      <div class="footer-tagline">Your key to more.</div>
+      <div class="footer-text">
+        <a href="mailto:hello@cousinscollective.net">hello@cousinscollective.net</a><br>
+        <a href="https://cousinscollective.net">cousinscollective.net</a><br>
+        Texas, USA · Serving clients nationally
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="booking.html">Book a Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:5093060120">Jessie · 509-306-0120</a></li>
+        <li><a href="tel:7024236995">Lauren · 702-423-6995</a></li>
+        <li><a href="mailto:hello@cousinscollective.net">hello@cousinscollective.net</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Who We Serve</div>
+      <ul class="footer-links">
+        <li><a href="booking.html">Attorneys & Law Firms</a></li>
+        <li><a href="booking.html">Healthcare & Wellness</a></li>
+        <li><a href="booking.html">Tech & SaaS Founders</a></li>
+        <li><a href="booking.html">Coaches & Educators</a></li>
+        <li><a href="booking.html">Real Estate Professionals</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2025 Cousins Collective LLC · Texas · All rights reserved</div>
+    <div class="footer-legal">Premium Virtual Operations · Retainer-Based · US-Based Talent</div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMenu(){
+  const m=document.getElementById('mobile-menu');
+  m.style.display=m.style.display==='none'?'block':'none';
+}
+
+// Scroll fade-in
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Nav shadow on scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').style.boxShadow=
+    window.scrollY>40?'0 2px 32px rgba(13,27,42,.4)':'none';
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('#mobile-menu a').forEach(a=>
+  a.addEventListener('click',()=>document.getElementById('mobile-menu').style.display='none')
+);
+</script>
+</body>
+</html>
