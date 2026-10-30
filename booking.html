@@ -68,9 +68,9 @@ const TOOLS = [
 ];
 
 const TIERS = [
-  { id:"launch",   label:"Launch",   price:"$1,200 / mo", desc:"1 focus area" },
-  { id:"momentum", label:"Momentum", price:"$2,200 / mo", desc:"2–3 service areas" },
-  { id:"partner",  label:"Partner",  price:"$3,800 / mo", desc:"Full operations suite" },
+  { id:"launch",   label:"Launch",   desc:"1 focus area" },
+  { id:"momentum", label:"Momentum", desc:"2–3 service areas" },
+  { id:"partner",  label:"Partner",  desc:"Full operations suite" },
 ];
 
 const VQS = {
@@ -249,7 +249,6 @@ const TierCard = ({tier,sel,onSel}) => {
   const on=sel===tier.id;
   return <div onClick={()=>onSel(tier.id)} style={{padding:"20px 18px",border:`2px solid ${on?B.gold:B.birch}`,borderRadius:8,cursor:"pointer",background:on?`rgba(192,155,76,0.07)`:B.white,transition:"all 0.2s",flex:1}}>
     <div style={{fontSize:11,letterSpacing:"0.14em",textTransform:"uppercase",color:on?B.goldDk:B.fog,fontWeight:500,marginBottom:6,fontFamily:'"DM Sans",system-ui,sans-serif'}}>{tier.label}</div>
-    <div style={{fontFamily:'"Cormorant Garamond",Georgia,serif',fontSize:22,fontWeight:400,color:B.navy,marginBottom:4}}>{tier.price}</div>
     <div style={{fontSize:12.5,color:B.dusk,fontFamily:'"DM Sans",system-ui,sans-serif'}}>{tier.desc}</div>
     {on&&<div style={{marginTop:12,width:20,height:20,borderRadius:"50%",background:B.gold,display:"flex",alignItems:"center",justifyContent:"center"}}><span style={{color:B.white,fontSize:10,fontWeight:700}}>✓</span></div>}
   </div>;
